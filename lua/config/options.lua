@@ -5,6 +5,8 @@
 vim.opt.number = true
 vim.opt.relativenumber = false
 
+vim.opt.mouse = "a"
+
 vim.api.nvim_set_hl(0, "SnacksPickerDir", {
   fg = "#ff9e64",
   bg = "#2a2a2a",

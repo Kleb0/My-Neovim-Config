@@ -18,3 +18,18 @@ vim.keymap.set("n", "<C-f>", function()
 end, {
   desc = "Find in current file",
 })
+
+vim.keymap.set("n", "<C-g>", function()
+  require("snacks").picker.grep()
+end, {
+  desc = "Find in project",
+})
+
+vim.cmd([[amenu PopUp.Open\ file\ on\ right :lua OpenFileOnRight()<CR>]])
+
+function OpenFileOnRight()
+  vim.cmd("vsplit")
+  require("snacks").picker.files()
+end
+
+vim.cmd([[amenu PopUp.Close\ active\ window :close<CR>]])
